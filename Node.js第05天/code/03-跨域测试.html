@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script>
+        $(function () {
+            $('#btnGet').on('click', function () {
+                $.ajax({
+                    method: 'GET',
+                    url: 'http://localhost:80/api/get',
+                    data: {
+                        username: '刘璐璐',
+                        age: 22
+                    },
+                    success: function (res) {
+                        console.log(res);
+                    }
+                })
+            })
+            $('#btnPost').on("click", function () {
+                $.ajax({
+                    method: 'POST',
+                    url: 'http://localhost:80/api/post',
+                    data: {
+                        username: '菲菲',
+                        age: 24
+                    },
+                    success: function (res) {
+                        console.log(res);
+                    }
+                })
+            })
+            $('#btnDelete').on('click', function () {
+                $.ajax({
+                    method: 'delete',
+                    url: 'http://localhost:80/api/delete',
+                    success: function (res) {
+                        console.log(res);
+                    }
+                })
+            })
+            $('#btnJsonp').on('click', function () {
+                // $.ajax({
+                //     method: 'GET',
+                //     url: 'http://localhost:80/jsonp',
+                //     dataType: 'jsonp',
+                //     success: function (res) {
+                //         console.log(res);
+                //     }
+                // })
+
+                jsonp({
+                    method: 'GET',
+                    url: 'http://localhost:80/jsonp',
+                    success: function (res) {
+                        console.log(res);
+                    }
+                })
+            })
+            function jsonp(params) {
+                var script = document.createElement('script')
+                var fn = 'lvchao_123123_123123'
+                window[fn] = params.success
+                script.src = params.url + '?callback=' + fn
+                document.body.appendChild(script)
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <button id="btnGet">get请求</button>
+    <button id="btnPost">post请求</button>
+    <button id="btnDelete">delete请求</button>
+    <button id="btnJsonp">Jsonp请求</button>
+</body>
+
+</html>

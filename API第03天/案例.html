@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div1 {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div1"></div>
+    <input type="button" value="点击切换颜色" class="btn1">
+    <input type="button" value="点击移除事件" class="btn2">
+    <script>
+        let div1 = document.querySelector('.div1');
+        let btn1 = document.querySelector('.btn1');
+        let btn2 = document.querySelector('.btn2');
+        btn1.onclick = function () {
+            let i = Math.floor(Math.random() * 256);
+            let j = Math.floor(Math.random() * 256);
+            let k = Math.floor(Math.random() * 256);
+            div1.style.backgroundColor = `rgb(${i},${j},${k})`;
+        }
+        btn2.onclick = function () {
+            btn1.onclick = null;
+        }
+    </script>
+</body>
+
+</html>

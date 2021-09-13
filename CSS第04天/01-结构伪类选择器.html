@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li {
+            display: inline-block;
+            list-style: none;
+            width: 50px;
+            height: 50px;
+            margin: 40px;
+            border: 1px solid #000;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        li:first-child {
+            background-color: blue;
+        }
+
+        li:nth-child(5) {
+            background-color: darkorchid;
+        }
+
+        li:last-child {
+            background-color: cyan;
+        }
+
+        li:nth-last-child(8) {
+            background-color: forestgreen;
+        }
+
+        /* li:nth-child(数字、表达式、单词) 
+        n:0、1、2、3、4、5、6、7、8、9...*/
+
+        /* even 偶数 */
+        li:nth-child(even) {
+            background-color: #ccc;
+        }
+
+        /* odd 奇数 */
+        li:nth-child(odd) {
+            background-color: fuchsia;
+        }
+
+        /* 前五个 -n+5 */
+        li:nth-child(-n+5) {
+            background-color: greenyellow;
+        }
+
+        /* 找从5往后的 n+5 */
+        li:nth-child(n+5) {
+            background-color: indianred;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <!-- li{$}*30 -->
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+        <li>11</li>
+        <li>12</li>
+        <li>13</li>
+        <li>14</li>
+        <li>15</li>
+        <li>16</li>
+        <li>17</li>
+        <li>18</li>
+        <li>19</li>
+        <li>20</li>
+        <li>21</li>
+        <li>22</li>
+        <li>23</li>
+        <li>24</li>
+        <li>25</li>
+        <li>26</li>
+        <li>27</li>
+        <li>28</li>
+        <li>29</li>
+        <li>30</li>
+    </ul>
+</body>
+
+</html>

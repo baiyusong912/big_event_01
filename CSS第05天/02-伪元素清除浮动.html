@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 600px;
+            border: 1px solid #000;
+        }
+
+        .d1 {
+            float: left;
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+
+        .d2 {
+            float: right;
+            width: 200px;
+            height: 200px;
+            background-color: green;
+        }
+
+        .w {
+            width: 600px;
+            height: 300px;
+            background-color: blueviolet;
+        }
+
+        /* 谁没有高度就把这个类名给谁 */
+
+        .clearfix::after {
+            content: '';
+            display: block;
+            clear: both;
+            height: 0;
+            visibility: hidden;
+        }
+
+        /* 解决ie67清除浮动 */
+
+        .clearfix {
+            *zoom: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box clearfix">
+        <div class="d1"></div>
+        <div class="d2"></div>
+        <div style="clear: both;"></div>
+    </div>
+    <div class="w clearfix"></div>
+</body>
+
+</html>

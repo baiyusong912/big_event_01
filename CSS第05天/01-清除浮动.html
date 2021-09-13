@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 600px;
+            border: 1px solid #000;
+        }
+
+        .d1 {
+            float: left;
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+
+        .d2 {
+            float: right;
+            width: 200px;
+            height: 200px;
+            background-color: green;
+        }
+
+        .w {
+            width: 600px;
+            height: 300px;
+            background-color: blueviolet;
+        }
+
+        /* 额外标签法在浮动元素后添加一个空标签里面写上clear：both */
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="d1"></div>
+        <div class="d2"></div>
+        <div style="clear: both;"></div>
+    </div>
+    <div class="w"></div>
+</body>
+
+</html>

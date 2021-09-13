@@ -1,0 +1,42 @@
+// 块级元素
+body, p , h1, h2, h3, h4, h5, h6 , ul, ol, dl, dt,dd,li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: #888;
+    font-family: '微软雅黑';
+    font-size: 14px;
+}
+
+// 行内元素
+a {
+    text-decoration: none;
+    color: #888;
+}
+
+
+// 行内块元素
+img, input {
+    vertical-align: middle;
+    border: 0 none;
+    padding: 0;
+    outline-style: none;
+}
+
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+}
+.clearfix {
+    *zoom: 1;
+}
+
+// 版心
+.w {
+    width: 980px;
+    margin: 0 auto;
+}

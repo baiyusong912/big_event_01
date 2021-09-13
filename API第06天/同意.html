@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="checkbox" class="ck" checked="true"> 是否同意
+    <input type="button" value="同意注册" class="btn">
+    <script>
+        let ck = document.querySelector('.ck');
+        let btn = document.querySelector('.btn');
+        ck.onclick = function () {
+            // let res = this.checked;
+            // if (res) {
+            //     btn.disabled = false;
+            // } else {
+            //     btn.disabled = true;
+            // }
+            if (ck.checked == true) {
+                btn.disabled = false;
+            } else {
+                btn.disabled = true;
+            }
+        }
+    </script>
+</body>
+
+</html>

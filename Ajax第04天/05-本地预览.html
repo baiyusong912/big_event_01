@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="file" id="file">
+    <img id="img" width="500">
+    <script>
+        let file = document.querySelector('#file')
+        let img = document.querySelector('#img')
+        file.onchange = function () {
+            if (file.files.length == 0) {
+                return alert('请选择图片')
+            }
+            let fr = new FileReader();
+            fr.readAsDataURL(file.files[0]);
+            fr.onload = function (e) {
+                img.src = e.target.result
+            }
+        }
+    </script>
+</body>
+
+</html>

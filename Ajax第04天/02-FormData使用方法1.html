@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 使用方法一
+        let fd = new FormData();
+        // 直接输出无法看到内容
+        // console.log(fd)
+        fd.append('username', 'admin')
+        fd.append('password', 'admin')
+        // 想看内容用扩展运算符和forEach
+        // console.log(...fd);
+        // fd.forEach(function (i,e) {
+        //     console.log(i,e);
+        // })
+        // xhr发送post请求参数是fd
+        let xhr = new XMLHttpRequest();
+        // 当我们设置了FormData类型数据，不需要设置请求头
+        xhr.open('POST', 'http://www.liulongbin.top:3006/api/formdata')
+        xhr.send(fd)
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                console.log(JSON.parse(xhr.responseText));
+            }
+
+        }
+    </script>
+</body>
+
+</html>

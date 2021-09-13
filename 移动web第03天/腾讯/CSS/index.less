@@ -1,0 +1,95 @@
+// 头部
+header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    background-color: #000;
+    z-index: 1;
+
+    .header-c {
+        width: 1150px;
+        height: 100%;
+        margin: 0 auto;
+        line-height: 70px;
+
+        img {
+            float: left;
+            margin-top: 15px;
+        }
+
+        ul {
+            float: right;
+            height: 100%;
+
+            li {
+                float: left;
+                height: 100%;
+                box-sizing: border-box;
+
+                a {
+                    padding: 0 20px;
+                    font-size: 18px;
+                    font-weight: bold;
+                }
+            }
+
+            li:hover {
+                border-bottom: 2px solid red;
+            }
+
+            li:hover a {
+                color: rgb(218, 157, 43);
+            }
+        }
+    }
+}
+
+// 轮播图
+.img {
+    position: relative;
+    width: 100%;
+    margin-top: 70px;
+
+    ul {
+
+        li {
+            width: 100%;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    .button {
+        position: absolute;
+        left: 50%;
+        bottom: 5%;
+        transform: translateX(-50%);
+
+        ul {
+
+            li {
+                float: left;
+                width: 70px;
+                height: 5px;
+                margin-right: 5px;
+
+                a {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 7px;
+                    background-color: #fff;
+                }
+
+                &:hover a {
+                    background-color: #888;
+                }
+            }
+        }
+    }
+
+}

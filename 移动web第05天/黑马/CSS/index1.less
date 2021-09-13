@@ -1,0 +1,27 @@
+@UIwidth: 375px;
+@num: 20px;
+@res: @UIwidth / @num;
+
+.body-box {
+    width: 100%;
+
+    header {
+        width: 100%;
+        height: (135rem / @res);
+        background-color: #EA4450;
+
+        h4 {
+            font-size: (16rem / @res);
+            line-height: (22rem / @res);
+            text-align: center;
+            color: #fff;
+        }
+
+        .text {
+            width: 100%;
+            height: (34rem / @res);
+            background-color: #fff;
+            border-radius: (6rem / @res);
+        }
+    }
+}

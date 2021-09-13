@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 回顾replace（）使用调用者是字符串
+        let str = "<div>我的名字是{{name}}</div>"
+        let reg = /{{([a-zA-Z]+)}}/
+        // 获取结果
+        let res = reg.exec(str)
+        // 替换-可以把{{name}}替换成name，就可以替换name相关的值
+        str.replace(res[0], res[1])
+        let newStr = str.replace(res[0], res[1])//字符串不可变性
+        console.log(str);
+        console.log(newStr);
+    </script>
+</body>
+
+</html>

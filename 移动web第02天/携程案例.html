@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            width: 100%;
+        }
+
+        header a {
+            flex: 1;
+        }
+
+        header img {
+            width: 100%;
+        }
+
+        .nav {
+            width: 100%;
+            padding: 0 5px;
+            box-sizing: border-box;
+        }
+
+        .nav .public {
+            display: flex;
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            background-color: blue;
+            border-radius: 10px;
+            margin-bottom: 8px;
+        }
+
+        .nav .public div {
+            flex: 1;
+            text-align: center;
+            border-right: 2px solid #fff;
+        }
+
+        .nav .public .nav-r {
+            border-right: 0;
+        }
+
+        .img {
+            display: flex;
+            width: 100%;
+        }
+
+        .img a {
+            flex: 1;
+        }
+
+        .img img {
+            width: 100%;
+        }
+
+        .footer {
+            display: flex;
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            background-color: #ccc;
+            border-top: 2px solid #888;
+        }
+
+        .footer a {
+            flex: 1;
+            text-align: center;
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="#"><img src="./banner.jpg" alt=""></a>
+    </header>
+    <div class="nav">
+        <div class="public nav1">
+            <div class="nav-l">首页</div>
+            <div class="nav-c">携程旅游</div>
+            <div class="nav-r">联系我们</div>
+        </div>
+        <div class="public nav2">
+            <div class="nav-l"></div>
+            <div class="nav-c"></div>
+            <div class="nav-r"></div>
+        </div>
+        <div class="public nav3">
+            <div class="nav-l"></div>
+            <div class="nav-c"></div>
+            <div class="nav-r"></div>
+        </div>
+        <div class="public nav4">
+            <div class="nav-l"></div>
+            <div class="nav-c"></div>
+            <div class="nav-r"></div>
+        </div>
+    </div>
+    <div class="img">
+        <a href="#"><img src="./extra_1.png" alt=""></a>
+        <a href="#"><img src="./extra_2.png" alt=""></a>
+    </div>
+    <div class="footer">
+        <a href="#">联系我们</a>
+        <a href="#">联系我们</a>
+        <a href="#">联系我们</a>
+    </div>
+</body>
+
+</html>

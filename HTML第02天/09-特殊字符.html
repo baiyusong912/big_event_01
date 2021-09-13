@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- &nbsp 不会累加的（只算一个），且该空格占据宽度受【字体】影响明显而强烈 -->
+    <div>哈哈哈哈&nbsp;&nbsp;&nbsp;&nbsp;哈哈哈哈</div>
+    <!-- &ensp 占据的宽度正好是1/2个中文宽度，且基本上不受字体影响 -->
+    <div>哈哈哈哈&ensp;&ensp;&ensp;&ensp;哈哈哈哈</div>
+    <!-- &emsp 占据的宽度正好是一个中文宽度，且基本上不受字体影响 -->
+    <div>哈哈哈哈&emsp;&emsp;&emsp;&emsp;哈哈哈哈</div>
+    <!-- 可以输入全角空格 -->
+    <!-- abcａｂｃ -->
+    <div>哈哈哈哈　　　　哈哈哈哈</div>
+</body>
+
+</html>

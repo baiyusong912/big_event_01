@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            width: 300px;
+            height: 30px;
+            border: 1px solid #ccc;
+            outline-style: none;
+            border-radius: 5px;
+            color: #ccc;
+            padding-left: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" value="用户名英文数字下划线">
+    <script>
+        let reg = /^[\w]{6,16}$/;
+        let text = document.querySelector('input');
+        text.onfocus = function () {
+            this.value = '';
+        }
+        text.onblur = function () {
+            let tt = this.value;
+            if (reg.test(tt)) {
+                this.style.borderColor = 'green';
+            } else {
+                this.style.borderColor = 'red';
+                this.value = '输入有误';
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="form1" action="http://www.liulongbin.top:3006/api/getbooks" method="GET" target="_self">
+        用户名：<input type="text">
+        密&emsp;码：<input type="password">
+        邮&emsp;箱：<input type="email">
+        电&emsp;话：<input type="tel">
+        <input type="submit">
+    </form>
+    <script src="../Ajax第一天/lib/jquery.js"></script>
+    <script>
+        $('#form1').submit(function (e) {
+            alert('第一种阻止方法：e.preventDefault()');
+            e.preventDefault();
+        })
+        $('form').on('submit', function (e) {
+            alert('第二种阻止方法：return false');
+            return false;
+        })
+    </script>
+</body>
+
+</html>

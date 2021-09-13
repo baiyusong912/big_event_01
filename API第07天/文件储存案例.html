@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        localStorage.setItem('myname', '花花');
+        let a = ['小牛', '小孙', '小王'];
+        // localStorage.setItem('myname', a);
+        // let b = localStorage.getItem('myname');
+        // console.log(b);
+        localStorage.setItem('myname', json.stringify(a));
+        let b = localStorage.getItem('myname');
+        b = JSON.parse(b);
+        for (let i = 0; i < b.length; i++) {
+            console.log(b[i]);
+        }
+        console.log(b);
+    </script>
+</body>
+
+</html>

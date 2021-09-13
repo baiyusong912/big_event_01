@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./lib/bootstrap.css">
+    <script src="./lib/jquery.js"></script>
+</head>
+
+<body style="padding: 15px;">
+    <!-- 创建面板 -->
+    <!-- 快捷键bs3-panel:primary -->
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">添加新图书</h3>
+        </div>
+        <div class="panel-body form-inline">
+            <!-- 在panel-body里创建输入框快捷键bs3-input-group:addon:text -->
+            <div class="input-group">
+                <div class="input-group-addon">书名</div>
+                <input type="text" class="form-control" id="intBookname" placeholder="请输入书名">
+            </div>
+            <div class="input-group">
+                <div class="input-group-addon">作者</div>
+                <input type="text" class="form-control" id="intAuthor" placeholder="请输入作者">
+            </div>
+            <div class="input-group">
+                <div class="input-group-addon">出版社</div>
+                <input type="text" class="form-control" id="intPublisher" placeholder="请输入出版社">
+            </div>
+            <!-- 创建按钮快捷键bs3-button:primary -->
+            <button type="button" class="btn btn-primary" id="btnAdd">添加</button>
+        </div>
+    </div>
+    <!-- 创建表格 -->
+    <!-- 快捷键bs3-table:bordered -->
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>书名</th>
+                <th>作者</th>
+                <th>出版社</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- <tr>
+                <td>1</td>
+                <td>王老板升官记</td>
+                <td>小王</td>
+                <td>社会出版社</td>
+                <td><a href="javascript:;">删除</a></td>
+            </tr> -->
+        </tbody>
+    </table>
+    <script>
+        $(function () {
+            function getBookList() {
+                // 发送get类型的ajax
+                $.get('http://www.liulongbin.top:3006/api/getbooks', function (res) {
+                    console.log(res);
+                    // Ajax完毕后判断数据是否接受
+                    if (res.status !== 200) return alert('图书列表获取失败！');
+                    let rows = [];
+                    $.each(res.data, function (i, item) {
+                        rows.push(`
+                            <tr>
+                            <td>${item.id}</td>
+                            <td>${item.bookname}</td>
+                            <td>${item.author}</td>
+                            <td>${item.publisher}</td>
+                            <td><a class="del" data-id="${item.id}" href="javascript:;">删除</a></td>
+                            </tr>
+                        `)
+                    })
+                    $('tbody').empty().html(rows.join(''));
+                })
+            }
+            getBookList();
+            $('#btnAdd').on('click', function () {
+                // 非空校验
+                let bookname = $('#intBookname').val().trim();
+                let author = $('#intAuthor').val().trim();
+                let publisher = $('#intPublisher').val().trim();
+                if (bookname == '' || author == '' || publisher == '') {
+                    $('#intBookname').val('');
+                    $('#intAuthor').val('');
+                    $('#intPublisher').val('');
+                    return alert('请填写图书信息，任何一项不能为空！')
+                };
+                // 通过校验发送ajax
+                $.post('http://www.liulongbin.top:3006/api/addbook', {
+                    bookname,
+                    author,
+                    publisher,
+                }, function (res) {
+                    // 校验添加是否成功
+                    if (res.status != 201) return alert('图书添加失败！');
+                    // 添加成功，重新渲染页面，input清空
+                    getBookList();
+                    $('#intBookname').val('');
+                    $('#intAuthor').val('');
+                    $('#intPublisher').val('');
+                })
+            })
+            $('tbody').on('click', '.del', function () {
+                let id = $(this).data('id');
+                $.get('http://www.liulongbin.top:3006/api/delbook', { id: id, }, function (res) {
+                    if (res.status != 200) return alert('删除图书失败，请重试！');
+                    getBookList();
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>

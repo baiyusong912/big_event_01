@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 150px;
+            height: 150px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <input type="file">
+    <script>
+        let int = document.querySelector('input');
+        let div = document.querySelector('div');
+        int.onchange = function () {
+            let a = this.files[0];
+            let reader = new FileReader();
+            reader.readAsText(a);
+            reader.onload = function () {
+                div.innerHTML = reader.result;
+            }
+        }
+    </script>
+</body>
+
+</html>

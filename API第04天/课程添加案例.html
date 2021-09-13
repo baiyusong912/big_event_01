@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 0 40px;
+        }
+
+        .con {
+            margin-bottom: 50px;
+        }
+
+        p {
+            color: #333;
+        }
+
+        .con input {
+            width: 150px;
+            height: 25px;
+        }
+
+        .con button {
+            width: 50px;
+            height: 30px;
+        }
+
+        table {
+            width: 480px;
+            text-align: center;
+            border-collapse: collapse;
+        }
+
+        table,
+        td,
+        th {
+            border: 1px solid #ccc;
+        }
+
+        td,
+        th {
+            padding: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>添加课程</h3>
+    <div class="con">课程名称：<input type="text" class="title"> 课程难度： <input type="text" class="hard"> <button
+            class="add">添加</button>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th width="80">序号</th>
+                <th>课程名</th>
+                <th>难度</th>
+                <th width="100">操作</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+
+
+    </table>
+    <script>
+        let add = document.querySelector('.add');
+        let tbody = document.querySelector('tbody');
+        let i = 0;
+        let title = document.querySelector('.title');
+        let hard = document.querySelector('.hard');
+        add.onclick = function () {
+            i++;
+            let tr = document.createElement('tr');
+            let title_content = title.value;
+            let hard_content = hard.value;
+            tr.innerHTML = `
+                <td>${i}</td>
+                <td>${title_content}</td>
+                <td>${hard_content}</td>
+                <td><input type="button" value="删除"></td>`;
+            tbody.appendChild(tr);
+        }
+        tbody.onclick = function (e) {
+            tbody.removeChild(e.target.parentNode.parentNode);
+        }
+    </script>
+</body>
+
+</html>

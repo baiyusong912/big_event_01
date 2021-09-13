@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        textarea {
+            width: 200px;
+            height: 100px;
+            border: 0 none;
+            border: 1px solid red;
+            resize: none;
+            outline-style: none;
+        }
+    </style>
+</head>
+
+<body>
+    <textarea></textarea>
+    <div></div>
+    <input type="button" value="按钮">
+    <script>
+        let btn = document.querySelector('input');
+        let text = document.querySelector('textarea');
+        let div = document.querySelector('div');
+        btn.onclick = function () {
+            let tt = text.value;
+            let reg = /激情|刺激|爆炸/g;
+            tt = tt.replace(reg, '好好学习');
+            div.innerText = tt;
+        }
+    </script>
+</body>
+
+</html>

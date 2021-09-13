@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let chuan = 'file://c/user/img/num1.jpg';
+        // let xg = chuan.lastIndexOf('/');
+        // let d = chuan.lastIndexOf('.');
+        // let ming = chuan.substring(xg + 1, d);
+        // let zming = chuan.substring(d + 1);
+        // console.log(ming);
+        // console.log(zming);
+        let xg = chuan.lastIndexOf('/');
+        let qc = chuan.substring(xg + 1);
+        let ming = qc.split('.');
+        console.log(ming);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            position: relative;
+            left: 0;
+            top: 0;
+            display: block;
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            /* transition: 过渡的属性（不写默认为全部） 用时（花费时间） 运动曲线（默认ease ） 延迟（何时开始 默认立刻开始）; */
+            /* 多个属性逗号隔开 */
+            transition: 3s;
+        }
+
+        .box:active {
+            width: 300px;
+            height: 300px;
+            background-color: blue;
+            left: 200px;
+            top: 500px;
+            /* opacity: 0; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>

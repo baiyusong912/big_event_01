@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div:first-child {
+            width: 0;
+            height: 0;
+            border-top: 10px solid rgb(218, 12, 46);
+            border-right: 10px solid rgb(15, 218, 72);
+            border-bottom: 10px solid rgb(213, 250, 49);
+            border-left: 10px solid rgb(40, 33, 228);
+        }
+
+        div:nth-child(2) {
+            width: 0;
+            height: 0;
+            border: 10px solid transparent;
+            border-top-color: #000;
+        }
+
+        .b {
+            position: relative;
+            width: 0px;
+            height: 0px;
+            border: 10px solid #000;
+            margin: 0 auto;
+        }
+
+        .b::after {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: -20px;
+            width: 0;
+            height: 0;
+            border: 20px solid transparent;
+            border-right-color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+    <div class="b"></div>
+</body>
+
+</html>

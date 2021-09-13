@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="按钮" id="btn1">
+    <input type="button" value="按钮" id="btn2">
+    <input type="button" value="按钮" id="btn3">
+    <input type="button" value="按钮" id="btn4">
+    <div></div>
+    <script src="../jQuery第一天/jquery-3.5.1.min.js"></script>
+    <script>
+        // $('#btn1').click(function () {
+        //     $('div').show();
+        // })
+        // $('#btn2').click(function () {
+        //     $('div').hide();
+        // })
+        // $('#btn3').click(function () {
+        //     $('div').toggle();
+        // })
+        // $('#btn1').click(function () {
+        //     $('div').slideDown();
+        // })
+        // $('#btn2').click(function () {
+        //     $('div').slideUp();
+        // })
+        // $('#btn3').click(function () {
+        //     $('div').slideToggle();
+        // })
+        $('#btn1').click(function () {
+            $('div').fadeIn();
+        })
+        $('#btn2').click(function () {
+            $('div').fadeOut();
+        })
+        $('#btn3').click(function () {
+            $('div').fadeToggle();
+        })
+        $('#btn4').click(function () {
+            $('div').fadeTo(2000, 0.5, 'linear', function () {
+                console.log('To方法');
+            });
+        })
+    </script>
+</body>
+
+</html>

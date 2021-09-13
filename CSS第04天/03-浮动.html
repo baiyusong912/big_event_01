@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 浮动的用途：让多个块级元素在同一行显示 */
+        /* 浮动的元素找相邻的浮动元素 顶部顶齐 在同一行内显示 要浮动都浮动 */
+        /* 浮动的元素脱离标准流 在页面内不占位置 */
+        /* 浮动的元素只会影响到后面的元素 */
+        .left {
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+        .center {
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: green;
+        }
+
+        .right {
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="left"></div>
+    <div class="center"></div>
+    <div class="right"></div>
+</body>
+
+</html>

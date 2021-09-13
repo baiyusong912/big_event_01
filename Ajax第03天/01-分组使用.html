@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let str = "<div>我的名字是{{name}}</div>"
+        let reg = /{{([a-zA-Z]+)}}/
+        console.log(reg.exec(str));
+        // 正则中()可以理解为分组，exec()中第一个元素是匹配所有正则的结构，第二个元素是分组的匹配结果
+    </script>
+</body>
+
+</html>

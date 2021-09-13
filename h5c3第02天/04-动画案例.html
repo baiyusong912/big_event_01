@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 150px;
+            height: 150px;
+            background-color: rgb(252, 169, 15);
+            border-radius: 20px 75px;
+            animation: move 6s linear infinite;
+        }
+
+        @keyframes move {
+            0% {
+                transform: translate(0);
+            }
+
+            25% {
+                transform: translate(1000px, 0) rotate(90deg);
+            }
+
+            50% {
+                transform: translate(1000px, 500px) rotate(180deg);
+            }
+
+            75% {
+                transform: translate(0, 500px) rotate(270deg);
+            }
+
+            100% {
+                transform: translate(0, 0) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>

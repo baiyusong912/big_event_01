@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .box {
+            position: relative;
+            width: 520px;
+            height: 280px;
+            border: 1px solid #000;
+            margin: 100px auto;
+        }
+
+        .prev,
+        .next {
+            position: absolute;
+            width: 20px;
+            height: 30px;
+            line-height: 30px;
+            background-color: rgba(0, 0, 0, .5);
+            color: #000;
+            top: 50%;
+            margin-top: -15px;
+        }
+
+        .prev {
+            left: 0;
+            border-radius: 0 15px 15px 0;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 15px 0 0 15px;
+            text-align: right;
+        }
+
+        .box ol {
+            position: absolute;
+            width: 70px;
+            height: 14px;
+            left: 50%;
+            bottom: 15px;
+            margin-left: -35px;
+            background-color: rgba(255, 255, 255, .5);
+            border-radius: 7px;
+        }
+
+        .box ol li {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            float: left;
+            background-color: #fff;
+            margin: 3px;
+        }
+
+        .box .current {
+            background-color: #ff5000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="./images/tb.jpg" alt="">
+        <a href="javascript" class="prev">&lt;</a>
+        <a href="javascript" class="next">&gt;</a>
+        <ol>
+            <li class="current"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ol>
+    </div>
+</body>
+
+</html>

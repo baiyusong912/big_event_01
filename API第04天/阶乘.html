@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function fn(n) {
+            if (n == 1) {
+                return n = 1;
+            }
+            return n * fn(n - 1);
+        }
+        fn(4);
+        let res = fn(4);
+        console.log(res);
+    </script>
+</body>
+
+</html>

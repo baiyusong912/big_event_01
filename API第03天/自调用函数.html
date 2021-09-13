@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="按钮">
+    <script>
+        // (function fn() {
+        //     alert('自调用函数');
+        // })();
+        let btn = document.querySelector('input');
+        btn.onclick = function () {
+            alert('DOM L0事件');
+        }
+    </script>
+</body>
+
+</html>

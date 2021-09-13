@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./lib/template-web.js"></script>
+</head>
+
+<body>
+    <!-- 定义一个盒子 -->
+    <div class="box"></div>
+    <!-- 定义一个模板 -->
+    <script type="text/html" id="th">
+        <ul>
+            <li>{{name}} --- {{age}}</li>
+        </ul>
+    </script>
+    <script>
+        // 定义一个数据
+        let data = {
+            name: '无名',
+            age: 18,
+        };
+        // 使用模板
+        let htmlStr = template('th', data);
+        // 复制给盒子的innerhtml属性
+        document.querySelector('.box').innerHTML = htmlStr;
+    </script>
+</body>
+
+</html>

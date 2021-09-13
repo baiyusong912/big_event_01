@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+            padding: 20px;
+            margin: 30px;
+            border: 5px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="按钮">
+    <div></div>
+    <script src="../jQuery第一天/jquery-3.5.1.min.js"></script>
+    <script>
+        $('input').on('click', function () {
+            console.log($('div').width(), $('div').height());
+            console.log($('div').innerWidth(), $('div').innerHeight());
+            console.log($('div').outerWidth(), $('div').outerHeight());
+            console.log($('div').outerWidth(true), $('div').outerHeight(true));
+        })
+    </script>
+</body>
+
+</html>

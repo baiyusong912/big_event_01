@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="one" data-myage="22" myheight="170"></div>
+    <script>
+        // 如果属性是以data-开始的，则通过dataset获取
+        // 如果属性不是以data-开始的，则通过getAttribute('属性名')获取
+        let res = document.querySelector('div');
+        // console.log(res.dataset.myage);
+        console.log(res.getAttribute('myheight'));
+    </script>
+</body>
+
+</html>

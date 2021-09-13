@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul></ul>
+    <script src="./jquery-3.5.1.min.js"></script>
+    <script>
+        $('<li>1</li>').appendTo('ul');
+        // 事件委托时，中间放的是委托源，这时this永远指向事件源
+        $('ul').on('click', 'li', function () {
+            console.log(Math.random());
+        });
+    </script>
+</body>
+
+</html>

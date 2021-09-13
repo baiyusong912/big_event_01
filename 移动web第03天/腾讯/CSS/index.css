@@ -1,0 +1,72 @@
+header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  background-color: #000;
+  z-index: 1;
+}
+header .header-c {
+  width: 1150px;
+  height: 100%;
+  margin: 0 auto;
+  line-height: 70px;
+}
+header .header-c img {
+  float: left;
+  margin-top: 15px;
+}
+header .header-c ul {
+  float: right;
+  height: 100%;
+}
+header .header-c ul li {
+  float: left;
+  height: 100%;
+  box-sizing: border-box;
+}
+header .header-c ul li a {
+  padding: 0 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+header .header-c ul li:hover {
+  border-bottom: 2px solid red;
+}
+header .header-c ul li:hover a {
+  color: #da9d2b;
+}
+.img {
+  position: relative;
+  width: 100%;
+  margin-top: 70px;
+}
+.img ul li {
+  width: 100%;
+}
+.img ul li img {
+  width: 100%;
+}
+.img .button {
+  position: absolute;
+  left: 50%;
+  bottom: 5%;
+  transform: translateX(-50%);
+}
+.img .button ul li {
+  float: left;
+  width: 70px;
+  height: 5px;
+  margin-right: 5px;
+}
+.img .button ul li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 7px;
+  background-color: #fff;
+}
+.img .button ul li:hover a {
+  background-color: #888;
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="绑定" id="btn1">
+    <input type="button" value="解绑" id="btn2">
+    <script src="./jquery-3.5.1.min.js"></script>
+    <script>
+        // $('#btn1').on('click', function () {
+        //     console.log(Math.random());
+        // })
+        // $('#btn2').on('click', function () {
+        //     $('#btn1').off('click');
+        // })
+        // $('#btn1').bind('click', function () {
+        //     console.log(Math.random());
+        // })
+        // $('#btn2').bind('click', function () {
+        //     $('#btn1').unbind('click');
+        // })
+        $('#btn1').one('click', function () {
+            console.log(Math.random());
+        })
+    </script>
+</body>
+
+</html>

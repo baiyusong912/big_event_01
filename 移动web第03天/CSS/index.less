@@ -1,0 +1,347 @@
+.fixed-header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    background-color: #fff;
+    display: none;
+
+    .fixed-header-l {
+        float: left;
+        margin-left: 20px;
+    }
+
+    .fixed-header-r {
+        float: right;
+        margin-right: 20px;
+    }
+}
+
+// 头部
+header {
+    width: 100%;
+    border-bottom: 1px solid #888;
+
+    .w {
+        height: 60px;
+        margin: 0 auto;
+
+        li {
+            float: left;
+            line-height: 60px;
+            text-align: center;
+            padding: 0 40px;
+            border-right: 1px solid #888;
+
+            &:last-child {
+                border: 0;
+
+                a:first-child {
+                    padding: 5px 8px;
+                    background-color: red;
+                    border-radius: 3px;
+                    color: #fff;
+                    margin-right: 30px;
+                }
+            }
+        }
+    }
+}
+
+// 导航栏
+.nav {
+    height: 50px;
+    line-height: 50px;
+
+    li {
+        float: left;
+        padding: 0 21px;
+
+        &:first-child img {
+            width: 140px;
+        }
+
+        &:last-child {
+            margin-left: 30px;
+        }
+    }
+}
+
+// 图片
+.img {
+    width: 100%;
+
+    img {
+        width: 100%;
+    }
+}
+
+// 列单介绍
+.list {
+    display: flex;
+    justify-content: space-between;
+
+    dl {
+        margin: 15px 0;
+
+        dt {
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 30px;
+        }
+
+        dd {
+            line-height: 30px;
+        }
+    }
+}
+
+// 文字介绍
+.word {
+    width: 100%;
+    border-top: 1px solid #888;
+    border-bottom: 1px solid #888;
+
+    .w {
+        padding: 10px 0;
+
+        p {
+            line-height: 30px;
+
+            span {
+                color: orange;
+            }
+
+            .help {
+                color: blue;
+                cursor: help;
+            }
+
+            a {
+                color: orange;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+// 底部
+.footer {
+    width: 100%;
+    background: url(../images/box-style-bg.png);
+
+    .footer-nav {
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        border-bottom: 1px solid #888;
+
+        li {
+            float: left;
+
+            a {
+                padding: 0 25px;
+            }
+        }
+    }
+
+    .footer-text {
+        position: relative;
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        background-color: #fff;
+        color: #888;
+        padding-left: 20px;
+        box-sizing: border-box;
+        margin-top: 20px;
+
+        &::before {
+            position: absolute;
+            left: 20px;
+            top: -20px;
+            content: "";
+            width: 0;
+            height: 0;
+            border: 10px solid transparent;
+            border-bottom: 10px solid #fff;
+        }
+    }
+
+    .footer-cards {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .card {
+            display: flex;
+            width: 33%;
+            height: 150px;
+            background-color: red;
+            border-radius: 8px;
+            margin: 10px 0;
+            padding: 10px;
+            box-sizing: border-box;
+
+            .card-l {
+                position: relative;
+                flex: 1;
+                height: 100%;
+                border-right: 1px dashed #fff;
+
+                &::before {
+                    position: absolute;
+                    top: -15px;
+                    right: -5px;
+                    content: "";
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background: url(../images/box-style-bg.png);
+                }
+
+                &::after {
+                    position: absolute;
+                    bottom: -15px;
+                    right: -5px;
+                    content: "";
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background: url(../images/box-style-bg.png);
+                }
+            }
+
+            .card-r {
+                width: 90px;
+                height: 100%;
+            }
+        }
+
+        &::after {
+            content: "";
+            width: 33%;
+            height: 0;
+        }
+    }
+}
+
+// ipad
+@media only screen and (min-width:748px) and (max-width:1024px) {
+    .fixed-header {
+        display: none;
+    }
+
+    header {
+
+        .w {
+            width: 768px;
+
+            li {
+                &:first-child {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .nav {
+        width: 100%;
+
+        li:last-child {
+            display: none;
+        }
+    }
+
+    .img {
+        width: 100%;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .list {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .word {
+        width: 100%;
+
+        .w {
+            width: 100%;
+            padding: 0 15px;
+        }
+    }
+
+    .footer {
+        .w {
+            width: 100%;
+        }
+
+        .footer-cards {
+
+            .card {
+                width: 49%;
+            }
+        }
+    }
+}
+
+// 移动端
+@media only screen and (min-width:320px) and (max-width:747px) {
+    .fixed-header {
+        display: block;
+    }
+
+    header {
+        display: none;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .img {
+        margin-top: 50px;
+        width: 100%;
+    }
+
+    .list {
+        display: none;
+    }
+
+    .word {
+        .w {
+            width: 100%;
+
+            p {
+                line-height: 20px;
+            }
+        }
+    }
+
+    .footer {
+        .w {
+            width: 100%;
+
+            .footer-nav {
+                overflow: auto;
+
+                ul {
+                    width: 720px;
+                }
+            }
+
+            .footer-cards {
+                .card {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

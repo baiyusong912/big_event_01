@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 定义一个盒子 -->
+    <div></div>
+    <script src="./lib/template-web.js"></script>
+    <!-- 定义一个模板 -->
+    <script type="text/html" id="th">
+         <ul>
+             {{each arr}}
+                <li>{{$index}} --- {{$value}}</li>
+             {{/each}}
+        </ul>
+         <ul>
+             {{each obj}}
+                <li>{{$index}} --- {{$value}}</li>
+             {{/each}}
+        </ul>
+     </script>
+    <script>
+        let data = {
+            arr: ['小虎', '小美', '小强'],
+            obj: { name: '小龙', age: 22, address: '中国' }
+        }
+        let tt = template('th', data);
+        document.querySelector('div').innerHTML = tt;
+    </script>
+</body>
+
+</html>

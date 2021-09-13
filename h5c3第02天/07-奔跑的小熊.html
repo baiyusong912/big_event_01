@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            overflow: hidden;
+        }
+
+        .bg1 {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 336px;
+            background: url(./bg1.png);
+            animation: bg 8s linear infinite;
+        }
+
+        @keyframes bg {
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: -3840px 0;
+            }
+        }
+
+        .bg2 {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 569px;
+            background: url(./bg2.png);
+            animation: bg 15s linear infinite;
+            z-index: -1;
+        }
+
+        .bear {
+            width: 200px;
+            height: 100px;
+            background: url(./bear.png) no-repeat;
+            animation: bear 1s steps(8) infinite;
+        }
+
+        @keyframes bear {
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: -1600px 0;
+            }
+        }
+
+        .move {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            animation: move 5s linear infinite;
+        }
+
+        @keyframes move {
+            0% {
+                left: -200px;
+            }
+
+            100% {
+                left: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg1"></div>
+    <div class="bg2"></div>
+    <div class="move">
+        <div class="bear"></div>
+    </div>
+</body>
+
+</html>

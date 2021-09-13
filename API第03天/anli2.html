@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        .box {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            cursor: move;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script>
+        let body = document.body;
+        let div = document.querySelector('.box');
+        body.addEventListener('mousemove', function (e) {
+            // let x = e.clientX;
+            // let y = e.clientY;
+            let x = e.clientX - 50;
+            let y = e.clientY - 50;
+            div.style.left = x + 'px';
+            div.style.top = y + 'px';
+        })
+    </script>
+</body>
+
+</html>

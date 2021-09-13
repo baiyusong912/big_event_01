@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./lib/bootstrap.css">
+    <script src="./lib/jquery.js"></script>
+</head>
+
+<body>
+    <!-- 进度条 -->
+    <div class="progress" style="width: 500px;margin: 20px;">
+        <div id="percent" class="progress-bar progress-bar-striped active" style="width: 0%">
+            0%
+        </div>
+    </div>
+    <!-- 选择上传图片 -->
+    <input type="file" id="file1">
+    <button id="btnUpload">文件上传</button>
+    <img src="" alt="" id="img">
+    <script>
+        let file = document.querySelector('#file1')
+        let btnUpload = document.querySelector('#btnUpload')
+        let img = document.querySelector('#img')
+        let percent = document.querySelector('#percent')
+        btnUpload.addEventListener('click', function () {
+            // 如果没有选择图片，返回一个空数组，file[0]是undefined
+            let f = file.files[0];
+            // 非空校验
+            if (f === undefined) {
+                return alert('请上传图片')
+            }
+            // 创建空白FormData对象
+            let fd = new FormData();
+            fd.append('avatar', f)
+            // 通过xhr发送ajax
+            let xhr = new XMLHttpRequest();
+            // 上传进度
+            xhr.upload.onprogress = function (e) {
+                // 判断文件是否支持进度计算
+                if (e.lengthComputable) {
+                    // e.loaded已经上传大小 e.total总共需要上传的大小
+                    let pc = Math.ceil(e.loaded / e.total * 100) + '%'
+                    // 设置宽度和内容
+                    percent.style.width = pc;
+                    percent.innerText = pc;
+                }
+            }
+            // 上传完成，不需要计算数值，直接用一个事件搞定
+            xhr.upload.onload = function () {
+                // 上传完成修改进度条状态
+                percent.className = 'progress-bar progress-bar-success'
+            }
+            xhr.open('POST', 'http://www.liulongbin.top:3006/api/upload/avatar')
+            // FormData传参
+            xhr.send(fd)
+            // 接收
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    let res = JSON.parse(xhr.responseText)
+                    // 判断状态码
+                    if (res.status != 200) {
+                        return alert('图片上传失败，请重试')
+                    }
+                    // 成功后，渲染图片
+                    img.src = 'http://www.liulongbin.top:3006' + res.url;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

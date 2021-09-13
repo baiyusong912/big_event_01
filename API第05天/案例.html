@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        .box {
+            width: 400px;
+            height: 400px;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+        }
+
+        .title {
+            width: 100%;
+            height: 50px;
+            background-color: #ccc;
+        }
+
+        .title li {
+            float: left;
+            width: 25%;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        .title a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            color: #000;
+        }
+
+        a.active {
+            background-color: #fff;
+            color: orange;
+        }
+
+        .content {
+            width: 100%;
+            height: 350px;
+        }
+
+        .content div {
+            width: 100%;
+            height: 100%;
+        }
+
+        .content ol {
+            padding: 0 20px;
+        }
+
+        .content li {
+            height: 50px;
+            line-height: 50px;
+            border-bottom: 1px dashed #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="title">
+            <ul>
+                <li><a href="javascript:;" class="active" data-name='west'>西部联盟</a></li>
+                <li><a href="javascript:;" data-name='east'>东部部联盟</a></li>
+                <li><a href="javascript:;" data-name='score'>得分榜</a></li>
+                <li><a href="javascript:;" data-name='help'>助攻榜</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <div id="west" style="display: block">
+                <ol>
+                    <li><a href="javascript:;">勇士</a></li>
+                    <li><a href="javascript:;">火箭</a></li>
+                    <li><a href="javascript:;">开拓者</a></li>
+                    <li><a href="javascript:;">掘金</a></li>
+                    <li><a href="javascript:;">独行侠</a></li>
+                </ol>
+            </div>
+            <div id="east" style="display: none">
+                <ol>
+                    <li><a href="javascript:;">骑士</a></li>
+                    <li><a href="javascript:;">猛龙</a></li>
+                    <li><a href="javascript:;">雄鹿</a></li>
+                    <li><a href="javascript:;">凯尔特人</a></li>
+                    <li><a href="javascript:;">热火</a></li>
+                </ol>
+            </div>
+            <div id="score" style="display: none">
+                <ol>
+                    <li><a href="javascript:;">库里</a></li>
+                    <li><a href="javascript:;">哈登</a></li>
+                    <li><a href="javascript:;">字母</a></li>
+                    <li><a href="javascript:;">大帝</a></li>
+                </ol>
+            </div>
+            <div id="help" style="display: none">
+                <ol>
+                    <li><a href="javascript:;">保罗</a></li>
+                    <li><a href="javascript:;">韦德</a></li>
+                    <li><a href="javascript:;">库里</a></li>
+                    <li><a href="javascript:;">詹姆斯</a></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <script>
+        let alinks = document.querySelectorAll('.title a');
+        let divs = document.querySelectorAll('.content div')
+        for (let i = 0; i < alinks.length; i++) {
+            alinks[i].onclick = function () {
+                for (let j = 0; j < alinks.length; j++) {
+                    alinks[j].classList.remove('active');
+                    divs[j].style.display = 'none';
+                }
+                alinks[i].classList.add('active');
+                // let res = this.dataset.name;
+                // let res_div = document.getElementById(res);
+                // res_div.style.display = 'block';
+                divs[i].style.display = 'block';
+            }
+        }
+    </script>
+</body>
+
+</html>

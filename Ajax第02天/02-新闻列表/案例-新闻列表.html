@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Document</title>
+	<link rel="stylesheet" href="./assets/news.css" />
+	<script src="./lib/jquery.js"></script>
+	<script src="./lib/template-web.js"></script>
+</head>
+
+<body>
+
+	<div id="news-list">
+
+	</div>
+	<script type="text/html" id="tt">
+		{{each data}}
+		<div class="news-item">
+			<img class="thumb" src="{{'http://www.liulongbin.top:3006' + $value.img}}" alt="" />
+			<div class="right-box">
+				<h1 class="title">{{$value.title}}</h1>
+				<div class="tags">
+					{{each $value.tags.split(',')}}
+					<span>{{$value}}</span>
+					{{/each}}
+				</div>
+				<div class="footer">
+					<div>
+						<span>{{$value.source}}</span>&nbsp;&nbsp;
+						<span>{{$value.time | dateFormat}}</span>
+					</div>
+					<span>评论数：{{$value.cmtcount}}</span>
+				</div>
+			</div>
+		</div>
+		{{/each}}
+	</script>
+	<script>
+		template.defaults.imports.dateFormat = function (dt) {
+			let date = new Date(dt);
+			let y = date.getFullYear();
+			let m = padZero(date.getMonth() + 1);
+			let d = padZero(date.getDate());
+			let h = padZero(date.getHours());
+			let mi = padZero(date.getMinutes());
+			let s = padZero(date.getSeconds());
+			return `${y}-${m}-${d} ${h}:${mi}:${s}`;
+		}
+		function padZero(n) {
+			return n < 10 ? '0' + n : n;
+		}
+		$.ajax({
+			method: 'get',
+			url: 'http://www.liulongbin.top:3006/api/news',
+			success: function (res) {
+				let str = template('tt', { data: res.data });
+				$('#news-list').empty().html(str);
+			}
+
+		})
+	</script>
+
+</body>
+
+</html>

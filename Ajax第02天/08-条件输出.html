@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 定义一个盒子 -->
+    <div></div>
+    <script src="./lib/template-web.js"></script>
+    <!-- 定义一个模板 -->
+    <script type="text/html" id="th">
+        {{if num == 1}}
+            <h1>num值为1</h1>
+        {{/if}}
+        {{if num == 1}}
+        <h1>num值为1</h1>
+        {{else if num == 2}}
+        <h2>num值为2</h2>
+        {{else}}
+        <h3>num值为3</h3>
+        {{/if}}
+    </script>
+    <script>
+        let data = {
+            num: 1
+        }
+        let tt = template('th', data);
+        document.querySelector('div').innerHTML = tt;
+    </script>
+</body>
+
+</html>

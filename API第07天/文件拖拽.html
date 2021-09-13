@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        // 获取div
+        let div = document.querySelector('div');
+        // 区域内容清空+阻止浏览器默认
+        div.ondragover = function (e) {
+            this.innerText = '';
+            e.preventDefault();
+        }
+        div.ondrop = function (e) {
+            let a = e.dataTransfer.files[0];
+            let reader = new FileReader();
+            reader.readAsText(a);
+            reader.onload = function () {
+                div.innerText = reader.result;
+            }
+            e.preventDefault();
+        }
+    </script>
+</body>
+
+</html>

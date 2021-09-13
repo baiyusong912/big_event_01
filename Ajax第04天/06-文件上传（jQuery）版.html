@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #loading {
+            display: none;
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+
+<body>
+    <img id="loading" src="./loading.gif" alt="">
+    <!-- 选择上传图片 -->
+    <input type="file" id="file1">
+    <!-- 提交图片 -->
+    <button id="btnUpload">文件上传</button>
+    <!-- 上传预览 -->
+    <img src="" alt="" id="img">
+    <!-- 导入jQuery -->
+    <script src="./lib/jquery.js"></script>
+    <script>
+        // 事件绑定到document身上兼容性最好
+        // 在所有ajax发送之前配置好loading效果
+        $(document).ajaxStart(function () {
+            // 这个事件：只要页面中有ajax发送，就会触发这个事件
+            $('#loading').show();
+        })
+        $(document).ajaxStop(function () {
+            // 这个事件：只要页面中有ajax结束，就会触发这个事件
+            $('#loading').hide();
+        })
+        // 非空校验
+        $('#btnUpload').on('click', function () {
+            // 把上传文件从数组取出来
+            let f = $('#file1')[0].files[0];
+            if (f === undefined) {
+                return alert('请上传图片')
+            }
+            // TODO:$.ajax()提交，文件上传FormData
+            let fd = new FormData();
+            // 向fd对象中的avatar属性添加值，值本身是文件
+            fd.append('avatar', f)
+            // 发送ajax
+            $.ajax({
+                method: 'POST',
+                url: 'http://www.liulongbin.top:3006/api/upload/avatar',
+                // 传递FormData类型的参数
+                data: fd,
+                // 如果想上传文件要增加两个属性，值是false
+                // contentType:不用再设置默认值的 application/x-www-form-urlencoded
+                contentType: false,
+                // processData:参数不需要编码了
+                processData: false,
+                success: function (res) {
+                    console.log(res);
+                    if (res.status != 200) return alert
+                    $('#img').prop('src', 'http://www.liulongbin.top:3006' + res.url)
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

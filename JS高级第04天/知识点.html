@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="按钮">
+    <script>
+        // let btn = document.querySelector('input');
+        // btn.addEventListener('click', () => {
+        //     console.log(this);
+        // })
+        // function Dad(uname, age) {
+        //     this.uname = uname;
+        //     this.age = age;
+        // }
+        // function Son(uname, age) {
+        //     Dad.call(this, uname, age)
+        //     Dad.apply(this,[uname,age])
+        // }
+        // let obj = new Son('小小酥', 22);
+        // console.log(obj);
+        let btn = document.querySelector('input');
+        btn.onclick = function () {
+            this.disabled = true;
+            setTimeout(function () {
+                this.disabled = false;
+            }.bind(this), 5000);
+        }
+    </script>
+</body>
+
+</html>

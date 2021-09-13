@@ -1,0 +1,353 @@
+html,
+body {
+    background-color: #f7f4f1;
+}
+
+.box {
+    width: 100%;
+    @UIwidth: 640px;
+    @num: 20;
+    @rex: @UIwidth / @num;
+
+    header {
+        width: 100%;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .content {
+        width: 100%;
+        padding: (24rem / @rex);
+        box-sizing: border-box;
+
+        .content1 {
+            width: 100%;
+
+            .card {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+
+                h4 {
+                    font-size: (28rem / @rex);
+                }
+
+                p {
+                    font-size: (28rem / @rex);
+                    color: #888888;
+                }
+            }
+
+            .card-box {
+                width: 100%;
+                height: (314rem / @rex);
+                margin-top: (22rem / @rex);
+                box-sizing: border-box;
+
+                .top {
+                    position: relative;
+                    overflow: hidden;
+                    width: 100%;
+                    height: (233rem / @rex);
+                    background: #55bc75 url(../images/icon.png) repeat-x bottom;
+                    border-radius: 10px 10px 0 0;
+
+                    img {
+                        position: absolute;
+                        top: (-33rem / @rex);
+                        right: (-8rem / @rex);
+                        width: (146rem / @rex);
+                        height: (146rem / @rex);
+                    }
+
+                    h3 {
+                        position: absolute;
+                        left: (20rem / @rex);
+                        top: (20rem / @rex);
+                        font-size: (46rem / @rex);
+                    }
+
+                    p {
+                        position: absolute;
+                        left: (20rem / @rex);
+                        top: (90rem / @rex);
+                        font-size: (24rem / @rex);
+                    }
+
+                    .time {
+                        position: absolute;
+                        left: (20rem / @rex);
+                        bottom: (30rem / @rex);
+                        font-size: (22rem / @rex);
+                    }
+
+                    .start {
+                        position: absolute;
+                        right: (25rem / @rex);
+                        bottom: (30rem / @rex);
+                        width: (100rem / @rex);
+                        height: (33rem / @rex);
+                        line-height: (33rem / @rex);
+                        text-align: center;
+                        background-color: rgba(0, 0, 0, .5);
+                        border-radius: 5px;
+                        font-size: (21rem / @rex);
+                    }
+                }
+
+                .bottom {
+                    position: relative;
+                    display: flex;
+                    width: 100%;
+                    height: (71rem / @rex);
+                    line-height: (71rem / @rex);
+                    background-color: #fff;
+                    text-align: center;
+                    border-radius: 0 0 10px 10px;
+
+                    a {
+                        flex: 1;
+                        font-size: (26rem / @rex);
+                    }
+
+                    .line {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        width: (3rem / @rex);
+                        height: (46rem / @rex);
+                        background-color: #e8e2d9;
+                    }
+                }
+            }
+        }
+
+        .content2 {
+            width: 100%;
+
+            .card {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+
+                h4 {
+                    font-size: (28rem / @rex);
+                }
+
+                p {
+                    font-size: (28rem / @rex);
+                    color: #888888;
+                }
+            }
+
+            .card-box {
+                width: 100%;
+                height: (233rem / @rex);
+                margin-top: (22rem / @rex);
+                box-sizing: border-box;
+
+                .top {
+                    position: relative;
+                    overflow: hidden;
+                    width: 100%;
+                    height: (233rem / @rex);
+                    background: #a974bc;
+                    border-radius: 10px 10px 10px 10px;
+
+                    img {
+                        position: absolute;
+                        top: (-33rem / @rex);
+                        right: (-8rem / @rex);
+                        width: (146rem / @rex);
+                        height: (146rem / @rex);
+                    }
+
+                    .price {
+                        position: absolute;
+                        left: (25rem / @rex);
+                        top: (5rem / @rex);
+                        font-size: (23rem / @rex);
+                        color: #fff;
+
+                        small {
+                            font-size: (40rem / @rex);
+                        }
+
+                        span {
+                            font-size: (90rem / @rex);
+                        }
+                    }
+
+                    .number {
+                        position: absolute;
+                        left: (35rem / @rex);
+                        bottom: (60rem / @rex);
+                        font-size: (22rem / @rex);
+                        color: #fff;
+                    }
+
+                    .time {
+                        position: absolute;
+                        left: (40rem / @rex);
+                        bottom: (25rem / @rex);
+                        font-size: (22rem / @rex);
+                        color: #fff;
+                    }
+
+                    .start {
+                        position: absolute;
+                        right: (30rem / @rex);
+                        bottom: (35rem / @rex);
+                        width: (100rem / @rex);
+                        height: (33rem / @rex);
+                        line-height: (33rem / @rex);
+                        text-align: center;
+                        background-color: rgba(0, 0, 0, .5);
+                        border-radius: 5px;
+                        font-size: (22rem / @rex);
+                        color: #fff;
+                    }
+                }
+            }
+
+            .card-box2 {
+                margin-top: (29rem / @rex);
+                box-sizing: border-box;
+
+                .top {
+                    position: relative;
+                    overflow: hidden;
+                    width: 100%;
+                    height: (233rem / @rex);
+                    background: #a974bc url(../images/icon.png) repeat-x bottom;
+                    border-radius: 10px 10px 0 0;
+
+                    img {
+                        position: absolute;
+                        top: (-33rem / @rex);
+                        right: (-8rem / @rex);
+                        width: (146rem / @rex);
+                        height: (146rem / @rex);
+                    }
+
+                    .price {
+                        position: absolute;
+                        left: (25rem / @rex);
+                        top: (5rem / @rex);
+                        font-size: (23rem / @rex);
+                        color: #fff;
+
+                        small {
+                            font-size: (40rem / @rex);
+                        }
+
+                        span {
+                            font-size: (90rem / @rex);
+                        }
+                    }
+
+                    .number {
+                        position: absolute;
+                        left: (35rem / @rex);
+                        bottom: (60rem / @rex);
+                        font-size: (22rem / @rex);
+                        color: #fff;
+                    }
+
+                    .time {
+                        position: absolute;
+                        left: (40rem / @rex);
+                        bottom: (25rem / @rex);
+                        font-size: (22rem / @rex);
+                        color: #fff;
+                    }
+
+                    .start {
+                        position: absolute;
+                        right: (30rem / @rex);
+                        bottom: (35rem / @rex);
+                        width: (100rem / @rex);
+                        height: (33rem / @rex);
+                        line-height: (33rem / @rex);
+                        text-align: center;
+                        background-color: rgba(0, 0, 0, .5);
+                        border-radius: 5px;
+                        font-size: (22rem / @rex);
+                        color: #fff;
+                    }
+                }
+
+                .bottom {
+                    position: relative;
+                    display: flex;
+                    width: 100%;
+                    height: (71rem / @rex);
+                    line-height: (71rem / @rex);
+                    background-color: #fff;
+                    text-align: center;
+                    border-radius: 0 0 10px 10px;
+
+                    a {
+                        flex: 1;
+                        font-size: (26rem / @rex);
+                    }
+
+                    .line {
+                        position: absolute;
+                        top: 50%;
+                        left: 33%;
+                        transform: translate(-50%, -50%);
+                        width: (3rem / @rex);
+                        height: (46rem / @rex);
+                        background-color: #e8e2d9;
+                    }
+
+                    .line2 {
+                        position: absolute;
+                        top: 50%;
+                        left: 66%;
+                        transform: translate(-50%, -50%);
+                        width: (3rem / @rex);
+                        height: (46rem / @rex);
+                        background-color: #e8e2d9;
+                    }
+                }
+            }
+
+            .card-box3 {
+                width: 100%;
+                height: (224rem / @rex);
+                box-sizing: border-box;
+                border: (2rem / @rex) dashed #dedede;
+                background-color: #fff;
+                margin-top: (27rem / @rex);
+                text-align: center;
+                padding-top: (42rem / @rex);
+
+                .icon-add {
+                    font-size: (98rem / @rex);
+                }
+
+                p {
+                    margin-top: (19rem / @rex);
+                    font-size: (28rem / @rex);
+                }
+            }
+
+            .footer {
+                width: 100%;
+                height: (103rem / @rex);
+                box-sizing: border-box;
+                margin-top: (60rem / @rex);
+
+                p {
+                    font-size: (24rem / @rex);
+                    line-height: (70rem / @rex);
+                }
+            }
+        }
+    }
+}

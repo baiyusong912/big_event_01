@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // class Person {
+        //     name = '小火龙';
+        //     age = 20;
+        //     sec = '玩宠';
+        //     static sty = '龙';
+        //     static nl = '喷火';
+        // }
+        // let peo = new Person();
+        // console.log(peo);
+        // console.log(Person.nl);
+        // class China {
+        //     constructor(name, age) {
+        //         this.name = name;
+        //         this.age = age;
+        //     }
+        //     chang() {
+        //         console.log('唱歌');
+        //     }
+        //     write() {
+        //         console.log('书法');
+        //     }
+        // }
+        // let peo = new China('小神龙', 25);
+        // console.log(peo);
+        // peo.chang();
+        class Dad {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+            money() {
+                console.log('赚一个亿');
+            }
+        }
+        class Son extends Dad {
+            constructor(name, age, score) {
+                super(name, age);
+                this.score = score;
+            }
+            money() {
+                console.log('赚的比爹多');
+                super.money();
+            }
+        }
+        let peo = new Son('小明', 22, 747);
+        console.log(peo);
+        peo.money();
+    </script>
+</body>
+
+</html>

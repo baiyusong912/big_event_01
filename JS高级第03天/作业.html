@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        li {
+            width: 400px;
+            line-height: 40px;
+            border-bottom: 2px dashed #ccc;
+        }
+
+        a {
+            text-decoration: none;
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <h2>发布留言</h2>
+    <textarea cols="60" rows="10"></textarea>
+    <input type="button" value="点击">
+    <ul>
+        <li>发布的内容 <a href="javascript:;">删除</a></li>
+        <li>aaaaaa <a href="javascript:;">删除</a></li>
+        <li>123 <a href="javascript:;">删除</a></li>
+    </ul>
+
+
+    <script type="text/javascript">
+        let btn = document.querySelector('input');
+        let text = document.querySelector('textarea');
+        let ul = document.querySelector('ul');
+        btn.onclick = function () {
+            let li = document.createElement('li');
+            let con = text.value;
+            ul.appendChild(li);
+            li.innerHTML = `
+                ${con} <a href="javascript:;">删除</a>
+                `;
+        }
+        ul.onclick = function (e) {
+            if (e.target.nodeName == 'A') {
+                ul.removeChild(e.target.parentNode);
+            }
+        }
+    </script> -->
+
+    <!-- 求字符串中出现最多的字符是哪个，出现了几次 -->
+
+    <!-- 把字符串去重 -->
+    <script>
+        let str = 'a1bcd2bcdab3bebfbcb1b2b3cdbef';
+        let obj = {};
+        for (let i = 0; i < str.length; i++) {
+            if (obj[str[i]]) {
+                obj[str[i]]++;
+            } else {
+                obj[str[i]] = 1;
+            }
+        }
+        console.log(obj);
+        let max = 'a';
+        let count = obj['a'];
+        for (let key in obj) {
+            if (count < obj[key]) {
+                count = obj[key];
+                max = key;
+            }
+        }
+        console.log(max);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>get请求</button>
+    <button>post请求</button>
+    <button>axios的get请求</button>
+    <button>axios的post请求</button>
+    <script src="./lib/axios.js"></script>
+    <script>
+        let btns = document.querySelectorAll('button')
+        btns[0].onclick = function () {
+            let url = 'http://www.liulongbin.top:3006/api/get'
+            let obj = { a: 1, b: 2, c: 3 }
+            // 底层涉及到了promise对象所以使用then
+            axios.get(url, { params: obj }, then(function (res) {
+                console.log(res);
+            }))
+        }
+        btns[1].onclick = function () {
+            let url = 'http://www.liulongbin.top:3006/api/post'
+            let obj = { d: 4, e: 5, f: 6 }
+            axios.get(url, { data: obj }, then((res) => {
+                // axios返回的数据进行了封装，除了返回的数据又增加了五个属性
+                console.log(res.data.data);
+            }))
+        }
+        btns[2].onclick = function () {
+            let url = 'http://www.liulongbin.top:3006/api/get'
+            let obj = { g: 111, h: 222, i: 333 }
+            axios({
+                method: 'GET',
+                url: url,
+                params: obj,
+            }).then(function (res) {
+                console.log(res);
+            })
+        }
+        btns[3].onclick = function () {
+            let url = 'http://www.liulongbin.top:3006/api/get'
+            let obj = { a: 1, b: 2, c: 3 }
+            axios({
+                method: 'POST',
+                url: url,
+                data: obj,
+            }).then(function (res) {
+                console.log(res);
+            })
+        }
+    </script>
+</body>
+
+</html>

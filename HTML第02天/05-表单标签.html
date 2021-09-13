@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="xx.com" method="">
+        <!-- action 提交到哪里（写个网址或提交地址） method 提交方式（get/post）-->
+        <!-- text 文本框 -->
+        <!-- placeholder 占位符 起提示作用 -->
+        账号：<input type="text" placeholder="请输入账号"> <br> <br>
+        <!-- password 密码框 -->
+        密码：<input type="password" placeholder="请输入密码"> <br> <br>
+        <!-- radio 单选按钮 必须有相同的name属性值才能代表他们为一组 checked 默认选中-->
+        性别：
+        <input type="radio" name="xb">男
+        <input type="radio" name="xb">女 <br> <br>
+        <!-- checkbox 多选按钮 有相同的name属性值代表是同一组的多选按钮 -->
+        喜好：
+        <input type="checkbox" name="xh">追剧
+        <input type="checkbox" name="xh">打游戏
+        <input type="checkbox" name="xh">听音乐
+        <input type="checkbox" name="xh">跑步
+        <!-- file 文件域 可以上传文件的 -->
+        <!-- multiple 多文件上传 -->
+        <input type="file" multiple> <br> <br>
+        input：
+        <!-- submit 提交按钮 必须配合form表单域来使用 -->
+        <input type="submit" value="提交按钮">
+        <!-- reset 重置按钮 初始化 必须配合form表单域使用 -->
+        <input type="reset" value="重置按钮">
+        <!-- button 普通按钮 不能进行提交 要配合js使用 -->
+        <input type="button" value="普通按钮">
+        <br> <br>
+        button：
+        <button type="submit">提交按钮</button>
+        <button type="reset">重置按钮</button>
+        <button type="button">普通按钮</button>
+        <br><br>
+        <select>
+            <option>北京</option>
+            <option>天津</option>
+            <option selected>河北</option>
+            <option>河南</option>
+            <option>山西</option>
+            <option>辽宁</option>
+        </select>
+        <br><br>
+        <!-- textarea 文本域 可以输入多行 -->
+        <textarea></textarea>
+        <br><br>
+        <!-- 第一种方式 label for id 推荐使用 -->
+        <label for="text">微信：</label> <input type="text" id="text"> <br><br>
+        <!-- 第二种方式 直接包裹文字和表单标签 -->
+        <label>QQ：<input type="text"></label>
+    </form>
+</body>
+
+</html>

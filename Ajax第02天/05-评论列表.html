@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入文件 -->
+    <link rel="stylesheet" href="../Ajax第一天/lib/bootstrap.css">
+    <script src="../Ajax第一天/lib/jquery.js"></script>
+</head>
+
+<body>
+    <!-- 在版心显示 -->
+    <div class="container">
+        <!-- 创建上面的panel -->
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">发表评论</h3>
+            </div>
+            <form class="panel-body" id="formAddCml">
+                <!-- 创建输入框和按钮 -->
+                <div>评论人 ：</div>
+                <input name="username" class="form-control" type="text">
+                <div>评论内容 ：</div>
+                <textarea name="content" class="form-control"></textarea>
+                <button type="submit" class="btn btn-primary">发表评论</button>
+            </form>
+        </div>
+        <!-- 创建评论列表 -->
+        <ul id="cml-list" class="list-group">
+            <!-- <li class="list-group-item">
+                <span class="badge" style="background-color: orange;">评论时间：</span>
+                <span class="badge" style="background-color: skyblue;">评论人：</span>
+                今天天气很不错
+            </li> -->
+        </ul>
+    </div>
+    <script>
+        // 渲染列表
+        $(function () {
+            // 封装函数
+            function renderCommentList() {
+                $.ajax({
+                    method: 'get',
+                    url: 'http://www.liulongbin.top:3006/api/cmtlist',
+                    success: function (res) {
+                        // 判断是否获取成功
+                        if (res.status != 200) return alert('评论列表获取失败');
+                        // 成功后渲染页面
+                        let rows = [];
+                        $.each(res.data, function (i, item) {
+                            rows.push(`
+                                <li class="list-group-item">
+                                    <span class="badge" style="background-color: orange;">评论时间：${item.time}</span>
+                                    <span class="badge" style="background-color: skyblue;">评论人：${item.username}</span>
+                                    ${item.content}
+                                </li>
+                            `)
+                        })
+                        // 添加到ul渲染
+                        $('#cml-list').empty().html(rows.join(''));
+                    }
+                })
+            }
+            renderCommentList();
+            // 添加评论到列表
+            $('#formAddCml').on('submit', function (e) {
+                // 取消默认提交
+                e.preventDefault();
+                // 通过ajax发送请求
+                $.ajax({
+                    method: 'post',
+                    url: 'http://www.liulongbin.top:3006/api/addcmt',
+                    data: $(this).serialize(),// this指向表单
+                    success: function (res) {
+                        // 判断是否添加成功
+                        if (res.status != 201) return alert('添加评论失败')
+                        // 成功后渲染页面
+                        renderCommentList();
+                        // 清空表单
+                        $('#formAddCml')[0].reset();
+                    }
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>

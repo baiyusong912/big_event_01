@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            perspective: 500px;
+        }
+
+        .box {
+            width: 150px;
+            height: 440px;
+            margin: 100px auto;
+        }
+
+        .box img {
+            width: 150px;
+            height: 440px;
+            transition: all 1s;
+        }
+
+        .box:active img {
+            /* transform: rotate3d(1, 0, 0, 60deg); */
+            transform: rotate3d(0, 1, 0, 75deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="./1.gif" alt="">
+    </div>
+</body>
+
+</html>

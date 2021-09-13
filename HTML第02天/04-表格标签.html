@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        table 表格主体
+        tr 行
+        td 单元格 是个容器 可以放其他标签
+        border 边框
+        width 宽度
+        height 高度
+        caption 表格的标题 要写在table内部
+        th 表头单元格 替换第一行的td
+        thead 表格头部
+        tbody 表格主体
+        tfoot 表格底部
+        rowspan 跨行合并
+        colspan 跨列合并
+     -->
+    <table border="1" width="400" height="400">
+        <caption>数据统计</caption>
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>年龄</th>
+                <th>民族</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>牛璐</td>
+                <td rowspan="3">男</td>
+                <td>27</td>
+                <td>汉</td>
+            </tr>
+            <tr>
+                <td>王浩颖</td>
+                <td>25</td>
+                <td>汉</td>
+            </tr>
+            <tr>
+                <td>白玉松</td>
+                <td>22</td>
+                <td>汉</td>
+            </tr>
+            <tr>
+                <td colspan="4">小小酥</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

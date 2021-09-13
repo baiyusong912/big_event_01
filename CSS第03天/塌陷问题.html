@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .d1 {
+            /* display: inline-block; */
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            /* z站在大盒子角度去思考 小盒子就是大盒子里的内容 所以给大盒子设置padding值 */
+            /* padding-left: 20px; */
+            /* box-sizing: border-box; */
+            /* 父元素有padding值或者上边框 */
+            /* border-top: 1px solid #000; */
+            /* padding-top: 10px; */
+            /* 给父元素设置overflow: hidden; */
+            /* overflow: hidden; */
+        }
+
+        .d2 {
+            width: 100px;
+            height: 100px;
+            background-color: purple;
+            /* margin-left: 10px; */
+            /* 让两个嵌套的块级元素 给子元素设置margin-top会把大盒子一起带下来 */
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="d1">
+        <div class="d2"></div>
+    </div>
+</body>
+
+</html>

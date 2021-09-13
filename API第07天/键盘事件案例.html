@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: skyblue;
+        }
+
+        img {
+            width: 100px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .toLeft {
+            transform: rotateY(180deg);
+        }
+    </style>
+
+</head>
+
+<body>
+    <img src="./xn.png" alt="">
+    <script>
+        let html = document.documentElement;
+        let img = document.querySelector('img');
+        let sx = 0;
+        let sy = 0;
+        let m = 10;
+        html.onkeydown = function (e) {
+            if (e.keyCode == 38) {
+                sy -= m;
+            } else if (e.keyCode == 40) {
+                sy += m;
+            } else if (e.keyCode == 37) {
+                sx -= m;
+                img.classList.add('toLeft');
+            } else if (e.keyCode == 39) {
+                sx += m;
+                img.classList.remove('toLeft');
+            }
+            img.style.left = sx + 'px';
+            img.style.top = sy + 'px';
+        }
+    </script>
+</body>
+
+</html>

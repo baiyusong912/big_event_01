@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 定义一个盒子 -->
+    <div class="box"></div>
+    <!-- 引入template文件 -->
+    <script src="./lib/template-web.js"></script>
+    <!-- 定义一个模板 -->
+    <script type="text/html" id="th">
+        <!-- 标准输出底层使用innertext -->
+    <h1>{{ htmlStr }}</h1>
+    <!-- 原文输出底层使用innerHTML -->
+    <h1>{{@ htmlStr }}</h1>
+    <!-- 变量 -->
+    {{ set a = htmlStr.substr(6,2) }}
+    <h1>{{ a }}</h1>
+    </script>
+    <script>
+        // 定义一个数据
+        let data = {
+            htmlStr: '<i>我是i标签里面的内容</i>'
+        }
+        // 使用模板
+        let str = template('th', data);
+        document.querySelector('.box').innerHTML = str;
+    </script>
+</body>
+
+</html>

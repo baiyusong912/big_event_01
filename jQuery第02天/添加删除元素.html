@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="按钮">
+    <ul>
+        <li>小熊猫</li>
+    </ul>
+    <script src="../jQuery第一天/jquery-3.5.1.min.js"></script>
+    <script>
+        $('input').on('click', function () {
+            // 父子插入
+            // 在后面插入
+            // $('ul').append($('<li>东北虎</li>'));
+            // $('<li>东北虎</li>').appendTo('ul');
+            // 在前面插入
+            // $('ul').prepend($('<li>东北虎</li>'));
+            // $('<li>东北虎</li>').prependTo('ul');
+            // 兄弟插入
+            // 前面插入
+            // $('ul').before($('<div>div</div>'));
+            // 后面插入
+            // $('ul').after($('<div>div</div>'));
+            // 删除
+            // $('li').remove();
+            // 复制
+            // let li = $('ul').clone();
+            // $('ul').after(li);
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            padding: 40px;
+        }
+
+        ul {
+            padding: 0;
+            list-style: none;
+        }
+
+        li {
+            margin: 10px 0;
+            line-height: 26px;
+            display: flex;
+        }
+
+        input,
+        button {
+            padding: 0;
+            margin-left: 10px;
+            display: block;
+        }
+
+        input {
+            width: 190px;
+            outline: none;
+        }
+
+        button {
+            width: 120px;
+        }
+
+        .verify {
+            width: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>
+            手机号:
+            <input type="text">
+        </li>
+        <li>
+            验证码:
+            <input type="text" class="verify">
+            <button id="btn">获取验证码</button>
+        </li>
+    </ul>
+    <script>
+        //分析:
+        // 1. 先给按钮注册点击事件
+        // 2. 当按钮disabled属性为true的时候,代表当前按钮不能点击
+        // 3. 当按钮disabled属性为false的时候,代表当前按钮可以点击
+        // 4. 在点击事件中设置一个定时器,在定时器中进行数字倒计数,将倒计数后的文字重新赋值给按钮
+        // 5. 当倒计数值等于0的时候,停止定时器,并修改按钮的文字,同时设置按钮为可以点击的效果
+        let a = document.getElementById('btn');
+        a.addEventListener('click', function () {
+            this.disabled = true;
+            this.innerText = '5秒之后重新获取';
+            let i = 5;
+            let b = setInterval(function () {
+                i--;
+                btn.innerText = `${i}秒之后重新获取`;
+                if (i == 0) {
+                    btn.disabled = false;
+                    clearInterval(b);
+                    btn.innerText = '获取验证码';
+                }
+            }, 1000);
+
+        })
+    </script>
+</body>
+
+</html>

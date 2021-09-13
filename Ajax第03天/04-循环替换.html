@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 定义
+        let str = "<div>我的名字是{{name}},我的年龄是{{age}}</div>";
+        let reg = /{{\s*([a-zA-Z]+)\s*}}/;
+        // 因为要循环进行替换，所以要多次进行赋值匹配
+        let res;
+        // 定义一个对象
+        let obj = {
+            name: '晓晓',
+            age: 18
+        }
+        // 循环匹配+替换（匹配的结果作为条件
+        while (res = reg.exec(str)) {
+            // 进来的一定是匹配成功的，str需要重新赋值
+            // 注意：此处复制的时候，不能用点属性，要用中括号属性，因为值是以变量形式存在的
+            str = str.replace(res[0], obj[res[1]])
+        }
+        console.log(str);
+    </script>
+</body>
+
+</html>

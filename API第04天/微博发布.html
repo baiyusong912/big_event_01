@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .w {
+            width: 900px;
+            margin: 0 auto;
+        }
+
+        .controls textarea {
+            width: 878px;
+            height: 100px;
+            resize: none;
+            border-radius: 10px;
+            outline: none;
+            padding-left: 20px;
+            padding-top: 10px;
+            font-size: 18px;
+        }
+
+        .controls {
+            overflow: hidden;
+        }
+
+        .controls div {
+            float: right;
+        }
+
+        .controls div span {
+            color: #666;
+        }
+
+        .controls div .useCount {
+            color: red;
+        }
+
+        .controls div button {
+            width: 100px;
+            outline: none;
+            border: none;
+            background: rgb(0, 132, 255);
+            height: 30px;
+            cursor: pointer;
+            color: #fff;
+            font: bold 14px '宋体';
+            transition: all 0.5s;
+        }
+
+        .controls div button:hover {
+            background: rgb(0, 225, 255);
+        }
+
+        .controls div button:disabled {
+            background: rgba(0, 225, 255, 0.5);
+        }
+
+        .contentList {
+            margin-top: 50px;
+        }
+
+        .contentList li {
+            padding: 20px 0;
+            border-bottom: 1px dashed #ccc;
+        }
+
+        .contentList li .info {
+            position: relative;
+        }
+
+        .contentList li .info span {
+            position: absolute;
+            top: 15px;
+            left: 100px;
+            font: bold 16px '宋体';
+        }
+
+        .contentList li .info p {
+            position: absolute;
+            top: 40px;
+            left: 100px;
+            color: #aaa;
+            font-size: 12px;
+        }
+
+        .contentList img {
+            width: 80px;
+            border-radius: 50%;
+        }
+
+        .contentList li .content {
+            padding-left: 100px;
+            color: #666;
+            word-break: break-all;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="w">
+        <div class="controls">
+            <img src="images/tip.png" alt=""><br>
+            <textarea placeholder="说点什么吧..." id="area" cols="30" rows="10" maxlength="200"></textarea>
+            <div>
+                <span class="useCount">0</span>
+                <span>/</span>
+                <span>200</span>
+                <button id="send">发布</button>
+            </div>
+
+        </div>
+        <div class="contentList">
+            <ul>
+
+            </ul>
+        </div>
+    </div>
+    <script>
+        let text = document.querySelector('#area');
+        let sp = document.querySelector('.useCount');
+        text.oninput = function () {
+            let val = this.value;
+            sp.innerHTML = val.length;
+        }
+        function myTime() {
+            let dt = new Date();
+            let year = dt.getFullYear();
+            let month = dt.getMonth() + 1;
+            month = month < 10 ? '0' + month : month;
+            let d = dt.getDate();
+            d = d < 10 ? '0' + d : d;
+            let h = dt.getHours();
+            h = h < 10 ? '0' + h : h;
+            let m = dt.getMinutes();
+            m = m < 10 ? '0' + m : m;
+            let s = dt.getSeconds();
+            s = s < 10 ? '0' + s : s;
+            return year + '-' + month + '-' + d + ' ' + h + ':' + m + ':' + s;
+        }
+
+        let btn = document.querySelector('#send');
+        let ul = document.querySelector('ul');
+        btn.onclick = function () {
+            let li = document.createElement('li');
+            let time = myTime();
+            let con = text.value;
+            ul.insertBefore(li, document.querySelector('ul li:nth-child(1)'));
+            li.innerHTML = `
+                <div class="info">
+                    <img src="./images/03.jpg">
+                    <span>百里守约</span>
+                    <p>发布于:${time}</p>
+                </div>
+                <div class="content"> ${con} </div>`;
+        }
+    </script>
+</body>
+
+</html>

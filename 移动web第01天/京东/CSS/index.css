@@ -1,0 +1,340 @@
+.index {
+    min-width: 320px;
+    max-width: 780px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* 头部导航 */
+.header-fixed {
+    position: fixed;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    min-width: 320px;
+    max-width: 780px;
+    width: 100%;
+    height: 40px;
+    background-color: red;
+    padding: 0 40px 0 60px;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.header-left {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 55px;
+    height: 20px;
+    background: url(../jd-sprites.png) -0 -110px;
+    background-size: 200px 200px;
+}
+
+.header-middle {
+    position: relative;
+    height: 40px;
+    padding-top: 5px;
+}
+
+.header-middle input {
+    width: 100%;
+    height: 30px;
+    border-radius: 15px;
+    padding-left: 30px;
+    box-sizing: border-box;
+}
+
+.header-middle::before {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    content: "";
+    width: 19px;
+    height: 19px;
+    background: url(../jd-sprites.png) -60px -110px;
+    background-size: 200px 200px;
+}
+
+.header-right {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+}
+
+.header-right a {
+    color: #fff;
+}
+
+/* 轮播图 */
+.banner {
+    width: 100%;
+    margin-top: 40px;
+}
+
+.banner img {
+    width: 100%;
+}
+
+/* 导航栏 */
+.nav {
+    width: 100%;
+}
+
+.nav li {
+    float: left;
+    width: 25%;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.nav li img {
+    width: 60%;
+}
+
+/* 秒杀 */
+.sm {
+    margin-top: 20px;
+    padding: 0 8px;
+}
+
+.sm-top::before {
+    float: left;
+    content: "";
+    width: 17px;
+    height: 22px;
+    background: url(../jd-sprites.png) -84px -110px;
+    background-size: 200px 200px;
+}
+
+.sm-top h3 {
+    float: left;
+    margin: 2px 8px;
+}
+
+.sm-top li {
+    float: left;
+    background-color: black;
+    color: #fff;
+    border-radius: 30%;
+}
+
+.sm-top li:nth-child(2n) {
+    background-color: #fff;
+    color: #000;
+}
+
+.sm-top a {
+    float: right;
+    color: #888;
+}
+
+.sm-top span {
+    font-family: 宋体;
+    margin-left: 5px;
+}
+
+.sm-bottom {
+    margin-top: 10px;
+}
+
+.sm-bottom li {
+    float: left;
+    width: 33%;
+    text-align: center;
+}
+
+.sm-bottom img {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.sm-bottom p {
+    color: red;
+    font-weight: bold;
+}
+
+/* 卡劵 */
+.card {
+    position: relative;
+    width: 100%;
+}
+
+.card img {
+    width: 100%;
+}
+
+.card ul {
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+    padding: 0 8px;
+    box-sizing: border-box;
+}
+
+.card li {
+    float: left;
+    width: 50%;
+}
+
+/* 排行 */
+.content1 {
+    width: 100%;
+}
+
+.content1 li {
+    float: left;
+    width: 33%;
+}
+
+.content1 li img {
+    width: 100%;
+}
+
+.content2 {
+    width: 100%;
+}
+
+.content2 li {
+    float: left;
+    width: 50%;
+}
+
+.content2 li img {
+    width: 100%;
+}
+
+.life {
+    width: 100%;
+    border: 5px solid #888;
+    box-sizing: border-box;
+}
+
+.life img {
+    width: 100%;
+}
+
+/* 商品 */
+.goods {
+    width: 100%;
+}
+
+.goods li {
+    float: left;
+    width: 50%;
+    padding: 0 11px;
+    margin: 10px 0;
+    box-sizing: border-box;
+}
+
+.goods li img {
+    width: 100%;
+}
+
+.goods li p {
+    font-size: 16px;
+    height: 40px;
+    line-height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+    border-bottom: 2px solid #888;
+}
+
+.goods li .price {
+    display: inline-block;
+    font-weight: bold;
+}
+
+.goods li a {
+    float: right;
+    right: 11px;
+    bottom: 0;
+    color: #888;
+}
+
+/* 查看更多 */
+.load {
+    width: 100%;
+    background-color: rgb(192, 192, 192);
+    text-align: center;
+    padding: 8px 0;
+    border-bottom: 1px solid rgb(163, 163, 163);
+}
+
+.footer-top {
+    width: 100%;
+    background-color: rgb(192, 192, 192);
+    padding: 20px 0;
+    border-bottom: 1px solid rgb(163, 163, 163);
+}
+
+.footer-top a {
+    float: left;
+    display: block;
+    width: 25%;
+    text-align: center;
+}
+
+.footer-bottom {
+    width: 100%;
+    padding: 8px 0;
+    margin-bottom: 50px;
+    background-color: rgb(192, 192, 192);
+}
+
+.footer-bottom li {
+    float: left;
+    width: 33%;
+    text-align: center;
+}
+
+.footer-bottom a::before {
+    display: block;
+    content: "";
+    width: 66px;
+    height: 66px;
+    margin: 0 auto 12px;
+    background: url(../jd-sprites.png) 0 -139px;
+}
+
+.footer-bottom li:nth-child(2) a::before {
+    background-position: -80px -139px;
+}
+
+.footer-bottom li:nth-child(3) a::before {
+    background-position: -160px -139px;
+}
+
+.footer-nav {
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    min-width: 320px;
+    max-width: 780px;
+    width: 100%;
+    background-color: rgb(223, 223, 223);
+}
+
+.footer-nav li {
+    float: left;
+    width: 20%;
+    text-align: center;
+}
+
+.footer-nav a {
+    display: block;
+    width: 100%;
+}
+
+.footer-nav a img {
+    width: 100%;
+}

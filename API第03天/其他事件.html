@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        let div = document.querySelector('div');
+        // 鼠标双击
+        // div.ondblclick = function () {
+        //     console.log('123');
+        // }
+        // 鼠标进入
+        // div.onmouseover = function () {
+        //     console.log('123');
+        // }
+        // 鼠标离开
+        // div.onmouseout = function () {
+        //     console.log('123');
+        // }
+        // 鼠标移动
+        // div.onmousemove = function () {
+        //     console.log('123');
+        // }
+        // 鼠标按下
+        div.onmousedown = function () {
+            console.log('123');
+        }
+        // 鼠标抬起
+        div.onmouseup = function () {
+            console.log('456');
+        }
+    </script>
+</body>
+
+</html>

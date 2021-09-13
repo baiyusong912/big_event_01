@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="按钮" class="btn1">
+    <input type="button" value="按钮" class="btn2">
+    <script>
+        // let btn1 = document.querySelector('.btn1');
+        // let btn2 = document.querySelector('.btn2');
+        // btn1.onclick = function () {
+        //     console.log(123);
+        // }
+        // btn2.onclick = function () {
+        //     btn1.onclick = null;
+        // }
+        let btn1 = document.querySelector('.btn1');
+        function fn() {
+            console.log(123);
+        }
+        btn1.addEventListener('click', fn);
+        btn1.removeEventListener('click', fn);
+    </script>
+</body>
+
+</html>

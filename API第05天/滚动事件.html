@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 3000px;
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+            overflow: auto;
+            box-sizing: border-box;
+        }
+
+        p {
+            height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p></p>
+    </div>
+    <script>
+        window.onscroll = function () {
+            console.log(document.documentElement.scrollTop);
+        }
+        let div = document.querySelector('div');
+        div.onscroll = function () {
+            console.log(this.scrollTop);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let str = "<div>我的名字是{{name}},我的年龄是{{age}}</div>"
+        let reg = /{{([a-zA-Z]+)}}/
+        // 匹配-替换
+        let res = reg.exec(str)
+        // 重新赋值
+        str = str.replace(reg[0], reg[1])//字符串不可变性需重新赋值
+        // 重新匹配-替换 str已经替换过一次字符串
+        res = reg.exec(str)
+        // 重新赋值
+        str = str.replace(reg[0], reg[1])
+        // 重新匹配-替换
+        // 程序不能告诉我有没有结束，res为null的时候就是结束的时候了
+        res = reg.exec(str)
+        // 必须指定次数，且代码冗余
+        let num;
+        // num = 值做条件时。判断的是赋值之后转换的布尔值
+        if (num = 123) {
+            alert(1)
+        }
+    </script>
+</body>
+
+</html>

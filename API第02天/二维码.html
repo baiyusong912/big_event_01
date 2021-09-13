@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #div1 {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto;
+        }
+
+        #div2 {
+            float: left;
+            width: 15px;
+            height: 15px;
+            line-height: 15px;
+            text-align: center;
+            border: 1px solid #000;
+            cursor: pointer;
+        }
+
+        img {
+            float: left;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1">
+        <div id="div2">X</div>
+        <img src="./code.png" alt="">
+    </div>
+    <script>
+        let a = document.getElementById('div2');
+        let b = document.getElementById('div1');
+        a.addEventListener('click', function () {
+            b.style.display = 'none';
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+/* 样式初始化文件 */
+/* 1. 默认标签样式去掉 */
+body, p, h1, h2, h3,h4, h5, h6, ul, ol,dl, li, dt, dd {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: '微软雅黑';
+    color: #888;
+    font-size: 14px;
+}
+
+a {
+    text-decoration: none;
+    color: #888;
+}
+
+img, input, button {
+    border: 0 none;
+    outline-style: none;
+    vertical-align: middle;
+    padding: 0;
+}
+
+/* 清除浮动 */
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+/* 2. 设置一个基本的统一样式 */

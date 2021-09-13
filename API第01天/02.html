@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 500px;
+            height: 300px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="dd"></div>
+    <script>
+        let a = document.getElementById('dd');
+        // 给div设置background或background-image属性
+        // 如何解决标签上没有对应的属性
+        // 通过style方式解决
+        // 解决本质
+        // 通过行内样式给标签设置属性
+        // style后面的属性不能随便点，有该属性可以用，没有则不能
+        a.style.background = 'url(../HTML第一天/0a0554fd53fd4b6043258e83d11af8d4.jpg)'
+    </script>
+</body>
+
+</html>

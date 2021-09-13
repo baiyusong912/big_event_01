@@ -1,0 +1,264 @@
+.fixed-header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  background-color: #fff;
+  display: none;
+}
+.fixed-header .fixed-header-l {
+  float: left;
+  margin-left: 20px;
+}
+.fixed-header .fixed-header-r {
+  float: right;
+  margin-right: 20px;
+}
+header {
+  width: 100%;
+  border-bottom: 1px solid #888;
+}
+header .w {
+  height: 60px;
+  margin: 0 auto;
+}
+header .w li {
+  float: left;
+  line-height: 60px;
+  text-align: center;
+  padding: 0 40px;
+  border-right: 1px solid #888;
+}
+header .w li:last-child {
+  border: 0;
+}
+header .w li:last-child a:first-child {
+  padding: 5px 8px;
+  background-color: red;
+  border-radius: 3px;
+  color: #fff;
+  margin-right: 30px;
+}
+.nav {
+  height: 50px;
+  line-height: 50px;
+}
+.nav li {
+  float: left;
+  padding: 0 21px;
+}
+.nav li:first-child img {
+  width: 140px;
+}
+.nav li:last-child {
+  margin-left: 30px;
+}
+.img {
+  width: 100%;
+}
+.img img {
+  width: 100%;
+}
+.list {
+  display: flex;
+  justify-content: space-between;
+}
+.list dl {
+  margin: 15px 0;
+}
+.list dl dt {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 30px;
+}
+.list dl dd {
+  line-height: 30px;
+}
+.word {
+  width: 100%;
+  border-top: 1px solid #888;
+  border-bottom: 1px solid #888;
+}
+.word .w {
+  padding: 10px 0;
+}
+.word .w p {
+  line-height: 30px;
+}
+.word .w p span {
+  color: orange;
+}
+.word .w p .help {
+  color: blue;
+  cursor: help;
+}
+.word .w p a {
+  color: orange;
+  cursor: pointer;
+}
+.footer {
+  width: 100%;
+  background: url(../images/box-style-bg.png);
+}
+.footer .footer-nav {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  border-bottom: 1px solid #888;
+}
+.footer .footer-nav li {
+  float: left;
+}
+.footer .footer-nav li a {
+  padding: 0 25px;
+}
+.footer .footer-text {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  background-color: #fff;
+  color: #888;
+  padding-left: 20px;
+  box-sizing: border-box;
+  margin-top: 20px;
+}
+.footer .footer-text::before {
+  position: absolute;
+  left: 20px;
+  top: -20px;
+  content: "";
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-bottom: 10px solid #fff;
+}
+.footer .footer-cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.footer .footer-cards .card {
+  display: flex;
+  width: 33%;
+  height: 150px;
+  background-color: red;
+  border-radius: 8px;
+  margin: 10px 0;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.footer .footer-cards .card .card-l {
+  position: relative;
+  flex: 1;
+  height: 100%;
+  border-right: 1px dashed #fff;
+}
+.footer .footer-cards .card .card-l::before {
+  position: absolute;
+  top: -15px;
+  right: -5px;
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: url(../images/box-style-bg.png);
+}
+.footer .footer-cards .card .card-l::after {
+  position: absolute;
+  bottom: -15px;
+  right: -5px;
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: url(../images/box-style-bg.png);
+}
+.footer .footer-cards .card .card-r {
+  width: 90px;
+  height: 100%;
+}
+.footer .footer-cards::after {
+  content: "";
+  width: 33%;
+  height: 0;
+}
+@media only screen and (min-width: 748px) and (max-width: 1024px) {
+  .fixed-header {
+    display: none;
+  }
+  header .w {
+    width: 768px;
+  }
+  header .w li:first-child {
+    display: none;
+  }
+  .nav {
+    width: 100%;
+  }
+  .nav li:last-child {
+    display: none;
+  }
+  .img {
+    width: 100%;
+  }
+  .img img {
+    width: 100%;
+  }
+  .list {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+  .word {
+    width: 100%;
+  }
+  .word .w {
+    width: 100%;
+    padding: 0 15px;
+  }
+  .footer .w {
+    width: 100%;
+  }
+  .footer .footer-cards .card {
+    width: 49%;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 747px) {
+  .fixed-header {
+    display: block;
+  }
+  header {
+    display: none;
+  }
+  .nav {
+    display: none;
+  }
+  .img {
+    margin-top: 50px;
+    width: 100%;
+  }
+  .list {
+    display: none;
+  }
+  .word .w {
+    width: 100%;
+  }
+  .word .w p {
+    line-height: 20px;
+  }
+  .footer .w {
+    width: 100%;
+  }
+  .footer .w .footer-nav {
+    overflow: auto;
+  }
+  .footer .w .footer-nav ul {
+    width: 720px;
+  }
+  .footer .w .footer-cards .card {
+    width: 100%;
+  }
+}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6模块化规范</title>
+</head>
+<body>
+
+    <!-- 1. 使用模块的那个文件引入进来 -->
+    <!-- 2. 浏览器对import支持性还不高, 需要babel.js预处理(import翻译成浏览器认识的代码)后, 再被浏览器执行 -->
+    <!-- 3. 引入bable.js, 给import代码的标签添加type="text/babel"
+        告诉浏览器这个script代码先要被babel处理后你在来执行
+    -->
+    <script src="./babel.min.js"></script>
+    <script type="text/babel" src="./use.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 定义一个盒子 -->
+    <div></div>
+    <script src="./lib/template-web.js"></script>
+    <!-- 定义一个模板 -->
+    <script type="text/html" id="th">
+         <h1>{{dt | dateFormat}}</h1>
+     </script>
+    <script>
+        // 注册过滤器
+        template.defaults.imports.dateFormat = function (dt) {
+            let y = dt.getFullYear();
+            let m = padZero(dt.getMonth() + 1);
+            let d = padZero(dt.getDate());
+            let h = padZero(dt.getHours());
+            let mi = padZero(dt.getMinutes());
+            let s = padZero(dt.getSeconds());
+            return `${y}-${m}-${d} ${h}:${mi}:${s}`;
+        }
+        function padZero(n) {
+            return n < 10 ? '0' + n : n;
+        }
+        let data = {
+            dt: new Date('2021-1-1 1:1:1')
+        }
+        let tt = template('th', data);
+        document.querySelector('div').innerHTML = tt;
+    </script>
+</body>
+
+</html>

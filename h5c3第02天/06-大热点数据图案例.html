@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #333;
+        }
+
+        .map {
+            position: relative;
+            width: 747px;
+            height: 617px;
+            background: url(./map.png);
+            margin: 0 auto;
+        }
+
+        .city {
+            position: absolute;
+            top: 227px;
+            right: 188px;
+
+        }
+
+        .dotted {
+            width: 8px;
+            height: 8px;
+            background-color: #09f;
+            border-radius: 50%;
+        }
+
+        .city div[class^=ripple],
+        .city2 div[class^=ripple] {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 8px;
+            height: 8px;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 15px rgb(255, 0, 0, .8);
+            border-radius: 50%;
+            animation: ripple 1.6s linear infinite;
+        }
+
+        @keyframes ripple {
+            0% {}
+
+            33% {
+                width: 30px;
+                height: 30px;
+                opacity: 1;
+            }
+
+            66% {
+                width: 50px;
+                height: 50px;
+                opacity: 0.5;
+            }
+
+            100% {
+                width: 70px;
+                height: 70px;
+                opacity: 0;
+            }
+        }
+
+        .map .city .ripple2,
+        .map .city2 .ripple2 {
+            animation-delay: 0.4s;
+        }
+
+        .map .city .ripple3,
+        .map .city2 .ripple3 {
+            animation-delay: 0.8s;
+        }
+
+        .map .city .ripple4,
+        .map .city2 .ripple4 {
+            animation-delay: 1.2s;
+        }
+
+        .city2 {
+            position: absolute;
+            bottom: 70px;
+            right: 188px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="map">
+        <div class="city">
+            <div class="dotted"></div>
+            <div class="ripple1"></div>
+            <div class="ripple2"></div>
+            <div class="ripple3"></div>
+            <div class="ripple4"></div>
+        </div>
+        <div class="city2">
+            <div class="dotted"></div>
+            <div class="ripple1"></div>
+            <div class="ripple2"></div>
+            <div class="ripple3"></div>
+            <div class="ripple4"></div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let ary = ['小牛', '小孙', '小王'];
+        let ul = document.createElement('ul');
+        let body = document.body;
+        body.appendChild(ul);
+        for (let i = 0; i < ary.length; i++) {
+            let li = document.createElement('li');
+            li.innerText = `${ary[i]}`;
+            ul.appendChild(li);
+        }
+    </script>
+</body>
+
+</html>

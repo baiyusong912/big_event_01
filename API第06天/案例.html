@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            background-color: aqua;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="javascript:;">删除</a>
+    <div>删除成功</div>
+    <script>
+        let a = document.querySelector('a');
+        let div = document.querySelector('div');
+        a.addEventListener('click', function () {
+            div.style.display = 'block';
+            setTimeout(function () {
+                div.style.display = 'none';
+            }, 3000);
+        });
+    </script>
+</body>
+
+</html>

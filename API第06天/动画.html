@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="移动">
+    <div></div>
+    <script>
+        // 获取按钮和盒子
+        let btn = document.querySelector('input');
+        let div = document.querySelector('div');
+        // 定义一个开始位置
+        let sw = 0;
+        // 定义一个结束位置
+        let jw = 1000;
+        // 定义一个每次移动的距离
+        let step = 10;
+        let T;
+        btn.onclick = function () {
+            function fn() {
+                if (sw >= jw) {
+                    clearTimeout(T);
+                    return;
+                }
+                sw += step;
+                div.style.left = sw + 'px';
+                T = setTimeout(fn, 20);
+            }
+            fn();
+        }
+    </script>
+</body>
+
+</html>
